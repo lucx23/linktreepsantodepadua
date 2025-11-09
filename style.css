@@ -27,6 +27,10 @@ header {
     text-align: center;
 }
 
+#header {
+    display: flex;
+}
+
 #corpo-principal {
     display       : flex;
     flex-direction: column;
@@ -34,6 +38,43 @@ header {
     margin-top    : 1em;
 }
 
+#inscricoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    color: white;
+
+    
+    & img {
+        width: 25em;
+        border-radius: .5rem;
+    }
+    
+    & a {
+        color: white;
+        font-size: 1.5em;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: var(--cor5);
+        padding: 1rem;
+        border-radius: .4rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transition: .3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+#links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+}
 
 
 
@@ -174,6 +215,55 @@ header {
     text-decoration: underline;
 }
 
+.faq {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+
+    & h2 {
+        color: white;
+    }
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    & input {
+        border: none;
+        padding: 0.5em;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: .2s;
+    }
+
+    & button {
+        background-color: var(--cor1);
+        color: white;
+        border: none;
+        padding: 0.5em;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        width: 50%;
+        margin: auto;
+        transition: .2s;
+
+        &:hover {
+            background-color: var(--cor5);
+        }
+    }
+}
+
+
 @media (max-width: 768px) {
     html {
         background-size: 100% 100%;
@@ -183,9 +273,17 @@ header {
         font-size: .8em;
     }
 
+    #header {
+        flex-direction: column;
+    }
+
     #corpo-principal {
         flex-direction: column;
         font-size: 1em;
+    }
+
+    #links {
+        grid-template-columns: 1fr;
     }
     
 
@@ -198,6 +296,14 @@ header {
     #igrejas {
         flex-direction: column;
         width: 90%;
+    }
+
+    #inscricoes {
+        width: 90%;
+
+        & img {
+            width: 20rem;
+        }
     }
 
     
